@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8"/>
+      <title>Projeto Haskell</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/style.css"/>
+   </head>
+   <body>
+      <nav class="light-blue">
+         <div class="nav-wrapper container light-blue">
+            <a href="#" class="brand-logo">
+            <img src="img/logo.png">
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li><a href="#">Início</a></li>
+               <li><a href="#">Sobre</a></li>
+               <li><a href="#" class="btn red darken-2">Minha Conta</a></li>
+            </ul>
+         </div>
+      </nav>
+      <main class="container">
+         <div class="row ">
+            <div class="col s12">
+               <h3>Dia a dia</h3>
+            </div>
+            <div class="col s12">
+               <div class="col s12 m4">
+                  <div class="card">
+                     <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/rotina/escovar-dentes.jpg">
+                     </div>
+                     <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Dentes<i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">Escovar os dentes</a></p>
+                     </div>
+                     <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col s12 m4">
+                  <div class="card">
+                     <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/rotina/almoco.jpg">
+                     </div>
+                     <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Comida<i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">Almoçar</a></p>
+                     </div>
+                     <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col s12 m4">
+                  <div class="card">
+                     <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/rotina/banho.jpg">
+                     </div>
+                     <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Banho<i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">Tomar banho</a></p>
+                     </div>
+                     <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <footer class="page-footer light-blue">
+         <div class="container">
+            <div class="row">
+               <div class="col l6 s12">
+                  <h5 class="white-text">Siga-nos nas redes sociais</h5>
+                  <p class="grey-text text-lighten-4">facebook | instagram | twitter</p>
+               </div>
+               <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Links Institucionais</h5>
+                  <ul>
+                     <li><a class="grey-text text-lighten-3" href="#!">Sobre</a></li>
+                     <li><a class="grey-text text-lighten-3" href="#!">Minha Conta</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="footer-copyright">
+            <div class="container">
+               © 2018 Todos os direitos reservados à STA CORPORATION
+            </div>
+         </div>
+      </footer>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript">
+         $('.carousel.carousel-slider').carousel({
+             fullWidth: true,
+             indicators: true
+         });
+         
+         autoplay();
+         function autoplay() {
+             $('.carousel').carousel('next');
+             setTimeout(autoplay, 4000);
+         }
+      </script>
+   </body>
+</html>

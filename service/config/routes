@@ -1,0 +1,16 @@
+/static StaticR Static appStatic
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/aluno                   AlunoR         GET POST
+!/aluno/#AlunoId         PerfilAlunoR   GET PUT DELETE
+/aluno/#AlunoId/ra/#Int  ModificaAlunoR PATCH
+/aluno/mudar/#AlunoId/#Text/#Text  ModificaAlunoGR PATCH
+
+/disciplina                   DisciplinaR    GET POST
+!/disciplina/#DisciplinaId    PerfilDiscR    GET
+
+/matricula                    MatriculaR     POST
+/grade/#AlunoId               GradeR         GET
+/lista/#DisciplinaId          ListaR         GET

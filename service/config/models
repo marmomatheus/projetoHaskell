@@ -1,0 +1,17 @@
+Aluno json
+	nome        Text
+	email       Text
+	ra          Int
+	UniqueEmailAluno email
+	UniqueRa         ra
+    deriving Show
+
+Matricula json
+	alunoid     AlunoId
+	discid      DisciplinaId
+	efetuado    Day
+
+Disciplina json
+    nome        Text
+    conteudo    Text
+    ca          Int

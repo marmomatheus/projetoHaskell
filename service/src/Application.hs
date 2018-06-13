@@ -3,8 +3,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE ViewPatterns #-}
-{-# LANGUAGE RecordWildCards #-}
+{-# LANGUAGE RecordWildCards, ViewPatterns #-}
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 module Application
     ( getApplicationDev
@@ -16,8 +15,6 @@ module Application
     , getApplicationRepl
     , shutdownApp
     -- * for GHCI
-    , handler
-    , db
     ) where
 
 import Control.Monad.Logger                 (liftLoc, runLoggingT)
@@ -25,7 +22,6 @@ import Database.Persist.Postgresql          (createPostgresqlPool, pgConnStr,
                                              pgPoolSize, runSqlPool)
 import Import
 import Language.Haskell.TH.Syntax           (qLocation)
-import Network.HTTP.Client.TLS              (getGlobalManager)
 import Network.Wai (Middleware)
 import Network.Wai.Handler.Warp             (Settings, defaultSettings,
                                              defaultShouldDisplayException,
@@ -42,8 +38,6 @@ import System.Log.FastLogger                (defaultBufSize, newStdoutLoggerSet,
 -- Don't forget to add new modules to your cabal file!
 import Handler.Common
 import Handler.Home
-import Handler.Comment
-import Handler.Profile
 
 -- This line actually creates our YesodDispatch instance. It is the second half
 -- of the call to mkYesodData which occurs in Foundation.hs. Please see the
@@ -58,7 +52,7 @@ makeFoundation :: AppSettings -> IO App
 makeFoundation appSettings = do
     -- Some basic initializations: HTTP connection manager, logger, and static
     -- subsite.
-    appHttpManager <- getGlobalManager
+    appHttpManager <- newManager
     appLogger <- newStdoutLoggerSet defaultBufSize >>= makeYesodLogger
     appStatic <-
         (if appMutableStatic appSettings then staticDevel else static)
@@ -175,16 +169,3 @@ getApplicationRepl = do
 
 shutdownApp :: App -> IO ()
 shutdownApp _ = return ()
-
-
----------------------------------------------
--- Functions for use in development with GHCi
----------------------------------------------
-
--- | Run a handler
-handler :: Handler a -> IO a
-handler h = getAppSettings >>= makeFoundation >>= flip unsafeHandler h
-
--- | Run DB queries
-db :: ReaderT SqlBackend Handler a -> IO a
-db = handler . runDB

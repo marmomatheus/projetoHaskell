@@ -1,1 +1,0 @@
-inserir o servico em haskell nesta pasta

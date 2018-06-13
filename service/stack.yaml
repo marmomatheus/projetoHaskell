@@ -12,7 +12,6 @@
 # resolver: nightly-2015-09-21
 # resolver: ghc-7.10.2
 # resolver: ghcjs-0.1.0_ghc-7.10.2
-<<<<<<< HEAD
 #
 # The location of a snapshot can be provided as a file or url. Stack assumes
 # a snapshot provided as a file might change, whereas a url resource does not.
@@ -20,12 +19,6 @@
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
 resolver: lts-11.13
-=======
-# resolver:
-#  name: custom-snapshot
-#  location: "./custom-snapshot.yaml"
-resolver: lts-9.8
->>>>>>> 92206931f96c95b008e7429459d4db29cce0116a
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -37,7 +30,6 @@ resolver: lts-9.8
 #    git: https://github.com/commercialhaskell/stack.git
 #    commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
 # - location: https://github.com/commercialhaskell/stack/commit/e7b331f14bcffb8367cd58fbfc8b40ec7642100a
-<<<<<<< HEAD
 #  subdirs:
 #  - auto-update
 #  - wai
@@ -53,38 +45,13 @@ packages:
 
 # Extra package databases containing global packages
 # extra-package-dbs: []
-=======
-#   extra-dep: true
-#  subdirs:
-#  - auto-update
-#  - wai
-#
-# A package marked 'extra-dep: true' will only be built if demanded by a
-# non-dependency (i.e. a user package), and its test suites and benchmarks
-# will not be run. This is useful for tweaking upstream packages.
-packages:
-- .
-# Dependency packages to be pulled from upstream that are not in the resolver
-# (e.g., acme-missiles-0.3)
-extra-deps: []
-
-# Override default flag values for local packages and extra-deps
-flags: {}
-
-# Extra package databases containing global packages
-extra-package-dbs: []
->>>>>>> 92206931f96c95b008e7429459d4db29cce0116a
 
 # Control whether we use the GHC we find on the path
 # system-ghc: true
 #
 # Require a specific version of stack, using version ranges
 # require-stack-version: -any # Default
-<<<<<<< HEAD
 # require-stack-version: ">=1.7"
-=======
-# require-stack-version: ">=1.5"
->>>>>>> 92206931f96c95b008e7429459d4db29cce0116a
 #
 # Override the architecture used by stack, especially useful on Windows
 # arch: i386

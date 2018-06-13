@@ -3,8 +3,4 @@
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
-<<<<<<< HEAD
 / HomeR GET
-=======
-/ HomeR GET 
->>>>>>> 92206931f96c95b008e7429459d4db29cce0116a

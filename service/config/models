@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 -- By default this file is used by `persistFileWith` in Model.hs (which is imported by Foundation.hs)
 -- Syntax for this file here: https://github.com/yesodweb/persistent/blob/master/docs/Persistent-entity-syntax.md
 
-=======
->>>>>>> 92206931f96c95b008e7429459d4db29cce0116a
 User
     ident Text
     password Text Maybe
@@ -19,8 +16,3 @@ Comment json -- Adding "json" causes ToJSON and FromJSON instances to be derived
     userId UserId Maybe
     deriving Eq
     deriving Show
-<<<<<<< HEAD
-=======
-
- -- By default this file is used in Model.hs (which is imported by Foundation.hs)
->>>>>>> 92206931f96c95b008e7429459d4db29cce0116a
